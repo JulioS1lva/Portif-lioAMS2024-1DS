@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tela de Login - Nyx</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #340056, #0b0033); /* Gradiente de roxo escuro para preto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    background-color: #280035; /* Fundo roxo escuro */
+    padding: 40px;
+    border-radius: 20px; /* Borda arredondada */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Sombra mais pronunciada */
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: #fff; /* Texto branco */
+    font-size: 28px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff; /* Texto branco */
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 25px; /* Borda arredondada */
+    background-color: #512b58; /* Fundo roxo */
+    color: #fff; /* Texto branco */
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #888; /* Cor do placeholder */
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Sombra ao focar */
+  }
+  
+  input[type="submit"] {
+    background: linear-gradient(to right, #340056, #0b0033); /* Gradiente cinza */
+    border: none;
+    border-radius: 25px; /* Borda arredondada */
+    padding: 15px 30px;
+    color: #fff; /* Texto branco */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    transform: translateY(-3px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(255, 126, 95, 0.5); /* Sombra ao passar o mouse */
+  }
+</style>
+</head>
+<body>
+
+<form>
+  <h2>Login</h2>
+  <label for="username">Usuário:</label>
+  <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+  
+  <label for="password">Senha:</label>
+  <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+  
+  <input type="submit" value="Entrar">
+</form>
+
+</body>
+</html>

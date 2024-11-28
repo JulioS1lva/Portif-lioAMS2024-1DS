@@ -1,22 +1,31 @@
-import javax.swing.JOptionPane;
+package com.mycompany.atividade.matriz;
+
+import javax.swing.*;
+
 public class Exercicio06 {
-	public static void main(String[] args) {
-		int idade = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite sua idade: "));
-		
-		if (idade >= 5 && idade <= 7) {
-            JOptionPane.showMessageDialog(null, "Categoria:\n Infantil A (5 a 7 anos)");
-        }
-        else if (idade >= 8 && idade <= 10) {
-            JOptionPane.showMessageDialog(null, "Categoria:\n Infantil B (8 a 10 anos)");
-        }
-        else if (idade >= 11 && idade <= 13) {
-            JOptionPane.showMessageDialog(null, "Categoria:\n Juvenil A (11 a 13 anos)");
-        }
-        else if (idade >= 14 && idade <= 17) {
-            JOptionPane.showMessageDialog(null, "Categoria:\n Juvenil B (14 a 17 anos)");
-        }
-        else if (idade >= 18) {
-            JOptionPane.showMessageDialog(null, "Categoria:\n Senior (18+)");
-	}
-  }
+
+    public static void main(String[] args) {
+        final int N_Lin = 3, N_Col = 3; // final para definir constante
+        int[][] mat = new int[N_Lin][N_Col];
+        int l, c;
+
+        JOptionPane.showMessageDialog(null, "****** Cadastrando dados na matriz ******\n Entre com o valor em cada posição da matriz");
+
+        // Atribuição dos valores na matriz
+        for (l = 0; l < N_Lin; l++) {
+            for (c = 0; c < N_Col; c++) {
+                mat[l][c] = Integer.parseInt(JOptionPane.showInputDialog("Valor linha " + (l + 1) + " coluna " + (c + 1) + " :"));
+            } // fim do for da coluna
+        } // fim do for da linha
+
+        JOptionPane.showMessageDialog(null, "****** Exibindo os dados da matriz ******");
+
+        // Exibição dos valores na matriz
+        for (l = 0; l < N_Lin; l++) {
+            for (c = 0; c < N_Col; c++) {
+                System.out.print(mat[l][c] + " ");
+            } // fim do for da coluna
+            System.out.print("\n"); // para organizar a apresentação em linhas diferentes
+        } // fim do for da linha
+    }
 }

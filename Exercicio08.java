@@ -1,24 +1,24 @@
-import javax.swing.*;
-public class Exercicio08 {
-	public static void main(String[] args) {
-		double r1 = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do primeiro lado do triângulo: "));
-		double r2 = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do segundo lado do triângulo: "));
-		double r3 = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do terceiro lado do triângulo: "));
-		if (r1 < r2 + r3 && r2 < r1 + r3 && r3 < r1 + r2) {
-			JOptionPane.showMessageDialog(null, "Os segmentos acima podem formar um triângulo..");
-			if (r1 == r2 && r2 == r3) {
-				JOptionPane.showMessageDialog(null, "Equilátero!");
-			}
-			else if (r1 != r2 && r2 != r3 && r3 != r1){
-				JOptionPane.showMessageDialog(null, "Escaleno!");
-			}
-			else {
-				JOptionPane.showMessageDialog(null, "Isósceles!");
-			}
-		}
-		else {
-			JOptionPane.showMessageDialog(null, "Esses valores não formam um triângulo!");	
-		}
-	}
-}
+package com.mycompany.atividade.matriz;
 
+import javax.swing.*;
+
+public class Exercicio08 {
+
+    public static void main(String[] args) {
+        int[][] mat = {{41, 42, 23, 14, 51}, {22, 32, 55, 54, 12}};
+        int x, y;
+        JOptionPane.showMessageDialog(null, "****** Exibindo apenas os elementos pares da matriz ******");
+
+        // Exibição dos valores na matriz
+        for (x = 0; x < 2; x++) {
+            for (y = 0; y < 5; y++) {
+                if (mat[x][y] % 2 == 0) {
+                    System.out.print(mat[x][y] + " ");
+                } else {
+                    System.out.print("- ");
+                }
+            }
+            System.out.print("\n");
+        }
+    }
+}

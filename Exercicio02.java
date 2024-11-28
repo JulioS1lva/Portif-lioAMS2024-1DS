@@ -1,23 +1,46 @@
-import javax.swing.JOptionPane;
+package com.mycompany.atividade.matriz;
+
+import java.util.Scanner;
+
 public class Exercicio02 {
+
     public static void main(String[] args) {
-    double massa, alt;
-    double imc;
-    massa = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite sua massa em KGs: "));
-    alt = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite sua altura em centímetros: "))/100;
-    imc = massa/(alt*alt);
-          
-    if (imc < 18){
-        JOptionPane.showMessageDialog(null, "Você está no grupo: MAGREZA.");
-    }
-    else if (imc < 25){
-        JOptionPane.showMessageDialog(null, "Você está no grupo: SAUDÁVEL.");
-    }
-    else if (imc < 30){
-        JOptionPane.showMessageDialog(null, "Você está no grupo: SOBREPESO.");
-    }
-    else if (imc >= 30){
-        JOptionPane.showMessageDialog(null, "Você está no grupo: OBESIDADE.");
-    }
+        int[][] nums = new int[5][5];
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[i].length; j++) {
+                nums[i][j]=scanner.nextInt();
+            }
+        }
+
+        int totalImpar = 0;
+        int[] totalColunas = new int[nums[0].length];
+        int totalLinha = 0;
+
+        for (int i = 0; i <= nums.length; i++) {
+            totalLinha=0;
+            if (i < nums.length) {
+                for (int j = 0; j < nums[i].length; j++) {
+                    totalImpar+=(nums[i][j] % 2 !=0)? nums[i][j] : 0;
+                    System.out.print(nums[i][j] + ((nums[i][j] < 10)? "  ":" "));
+                    totalColunas[i] += nums[j][i];
+                    totalLinha += nums[i][j];
+                }
+                System.out.println("= "+ totalLinha);
+            }else{
+                for(int j = 0; j < nums[0].length; j++){
+                    System.out.print("|| ");
+                }
+                System.out.println();
+                for (int num : totalColunas) {
+                    System.out.print(num + " ");
+                }
+                System.out.println();
+
+            }
+        }
+
+
+        System.out.println("Soma de todos os numeros impares: " + totalImpar);
     }
 }
